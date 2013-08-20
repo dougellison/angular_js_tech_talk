@@ -59,9 +59,106 @@
 					</ul>
 				</section>
 				<section>
-					<h3>Client Side MVW</h3>
-					<p>There are many different types of Model View fill in the blank frameworks.  AngularJS recognizes that last part can be a bit tricky. So in their own words they call it Model View Whatever.</p>
-					
+					<h3>What is it?</h3>
+					<ul>
+						<li>100% JavaScript</li>
+						<li>Client Side</li>
+						<li>Templating System</li>
+						<li>Lightweight < 29KB compressed and minified</li>
+						<li>Yes it is a framework</li>
+						<li>Model View Whatever...</li>
+						<li>Tons of Utility Methods</li>
+						<li>Uses JQuery if available</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Why use it?</h3>
+					<ul>
+						<li>Client Side means responsive</li>
+						<li>Its Comprehensive</li>
+							<ul>
+								<li>Built in support for RESTFul operations</li>
+								<li>Vast templating possibilities</li>
+								<li>Testable</li>
+								<li>Many Utility methods</li>
+							</ul>
+						<li>Dependency Injection</li>
+						<li>Very large active community <a href="http://angular-ui.github.io/" target="blank">http://angular-ui.github.io/</a></li>
+						<li>Lots of people use it <a href="http://builtwith.angularjs.org/" target="blank">http://builtwith.angularjs.org/</a></li>
+						<li>2 Way data binding</li>
+						<li>Create custom components</li>
+					</ul>
+				</section>
+				
+				<section>
+					<section>
+						<h3>How does it compare to BackboneJS</h3>
+						<br>
+						<p>Below are excerpts directly from the BackboneJS website <a href="http://backbonejs.org/#faq">http://backbonejs.org/#faq</a></p>
+						<ul>
+							<li>View agnostic</li>
+							<li>Goal is to be a library</li>
+							<li>Avoids Two way data-binding</li>
+							<li>No support for making new HTML tags or entities</li>
+							<li>HTML and Logic are completely separated</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Application Comparison</h3>
+						<p>One of the best ways to evaluate a framework or library is to implement a simple application.  Just such a thing already exists for the most popular of web libraries we'll be covering <a href="http://todomvc.com/" target="blank">ToDoMVC</a>
+						</p>
+					</section>
+					<section>
+						<h3>Input Section</h3>
+						<pre class="html" style="width:140%">
+							<code data-trim >
+<!-- Backbone -->
+<header id="header">
+    <h1>todos</h1>
+    <input id="new-todo" placeholder="What needs to be done?" autofocus>
+</header>
+
+<!--Angular -->
+<header id="header1">
+    <h1>todos</h1>
+    <form id="todo-form" ng-submit="addTodo()">
+        <input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" autofocus>
+    </form>
+</header>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Another Example</h3>
+						<pre style="width:140%;height:125%;">
+							<code data-trim>
+<!-- Backbone -->
+<div id="main">
+    <input id="toggle-all" type="checkbox">
+    <label for="toggle-all">Mark all as complete</label>
+    <ul id="todo-list"></ul>
+</div>
+
+<!--Angular -->
+<div id="main" ng-show="todos.length" ng-cloak>
+    <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+    <label for="toggle-all">Mark all as complete</label>
+    <ul id="todo-list">
+        <li ng-repeat="todo in todos | filter:statusFilter" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+            <div class="view">
+                <input class="toggle" type="checkbox" ng-model="todo.completed">
+                <label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
+                <button class="destroy" ng-click="removeTodo(todo)"></button>
+            </div>
+            <form ng-submit="doneEditing(todo)">
+                <input class="edit" ng-model="todo.title" todo-escape="revertEditing(todo)" todo-blur="doneEditing(todo)" todo-focus="todo == editedTodo">
+            </form>
+        </li>
+    </ul>
+</div>
+						</code>
+						</pre>
+					</section>
 				</section>
 				
 			</div>
