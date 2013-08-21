@@ -56,6 +56,8 @@
 						<li>Why use it?</li>
 						<li>How does it compare to BackboneJS</li>
 						<li>AngularJS Strongest Attributes</li>
+						<li>Controller and $scope</li>
+						<li>Directives</li>
 					</ul>
 				</section>
 				<section>
@@ -80,12 +82,11 @@
 								<li>Built in support for RESTFul operations</li>
 								<li>Vast templating possibilities</li>
 								<li>Testable</li>
-								<li>Many Utility methods</li>
 							</ul>
 						<li>Dependency Injection</li>
 						<li>Very large active community <a href="http://angular-ui.github.io/" target="blank">http://angular-ui.github.io/</a></li>
 						<li>Lots of people use it <a href="http://builtwith.angularjs.org/" target="blank">http://builtwith.angularjs.org/</a></li>
-						<li>2 Way data binding</li>
+						<li>Two Way data binding</li>
 						<li>Create custom components</li>
 					</ul>
 				</section>
@@ -99,7 +100,7 @@
 							<li>View agnostic</li>
 							<li>Goal is to be a library</li>
 							<li>Avoids Two way data-binding</li>
-							<li>No support for making new HTML tags or entities</li>
+							<li>The focus is on supplying you with helpful methods to manipulate and query your data, not on HTML widgets or reinventing the JavaScript object model.</li>
 							<li>HTML and Logic are completely separated</li>
 						</ul>
 					</section>
@@ -110,28 +111,28 @@
 					</section>
 					<section>
 						<h3>Input Section</h3>
-						<pre class="html" style="width:140%">
-							<code data-trim >
+						<pre>
+							<code>
 <!-- Backbone -->
 <header id="header">
-    <h1>todos</h1>
-    <input id="new-todo" placeholder="What needs to be done?" autofocus>
+  <h1>todos</h1>
+  <input id="new-todo" placeholder="What needs to be done?" autofocus>
 </header>
 
 <!--Angular -->
-<header id="header1">
-    <h1>todos</h1>
-    <form id="todo-form" ng-submit="addTodo()">
-        <input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" autofocus>
-    </form>
+<header id="header">
+  <h1>todos</h1>
+  <form id="todo-form" ng-submit="addTodo()">
+    <input id="new-todo" ng-model="newTodo" placeholder="What needs to be done?" autofocus>
+  </form>
 </header>
 							</code>
 						</pre>
 					</section>
 					<section>
 						<h3>Another Example</h3>
-						<pre style="width:140%;height:125%;">
-							<code data-trim>
+						<pre >
+							<code data-trim style="width:1300px; height:700px;margin-left:-300px">
 <!-- Backbone -->
 <div id="main">
     <input id="toggle-all" type="checkbox">
@@ -159,8 +160,63 @@
 						</code>
 						</pre>
 					</section>
+					<section>
+						<h3>Backbone View</h3>
+						<p>As it turns out Backbones insistence on not having anything to do with DOM manipulation splits the HTMl and generation apart.</p>
+						<pre>
+							<code>
+// The DOM element for a todo item...
+app.TodoView = Backbone.View.extend({
+//... is a list tag.
+tagName:  'li',
+
+// Cache the template function for a single item.
+template: _.template($('#item-template').html()),
+
+// The DOM events specific to an item.
+events: {
+  'click .toggle': 'toggleCompleted',
+  'dblclick label': 'edit',
+  'click .destroy': 'clear',
+  'keypress .edit': 'updateOnEnter',
+  'blur .edit': 'close'
+},
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Item Template</h3>
+						<pre>
+							<code>
+<script type="text/template" id="item-template">
+  <div class="view">
+    <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+    <label><%- title %></label>
+    <button class="destroy"></button>
+  </div>
+  <input class="edit" value="<%- title %>">
+</script>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Questions so far?</h3>
+					</section>
 				</section>
-				
+				<section>
+					<section>
+						<h3>Strongest Attributes</h3>
+						<ul>
+							<li>Two Way Data Binding</li>
+							<li>Ties Data to View</li>
+							<li>Directives</li>
+						</ul>
+					</section>
+					<section>
+						<h3>What is Two way data binding?</h3>
+						<a href="dougellison.github.io/dougellison/examples/data-binding" target="blank">Data-Binding Example</a>
+					</section>
+				</section>
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
