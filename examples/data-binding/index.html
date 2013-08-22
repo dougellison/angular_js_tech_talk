@@ -5,7 +5,8 @@
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body ng-controller="Databinding">
+<body ng-controller="Databinding" style="text-align:center">
+
 
   <div>Angular Data Binding Demo</div>
   <br>
@@ -22,6 +23,32 @@
   <input type="checkbox" ng-model="checkbox1"/> Click the box?
   <br>
   <div ng-show="checkbox1"> I only appear when a checkbox is selected</div>
+  
+  
+  <br>
+  <select ng-disabled="!checkbox1" ng-model="selectedOption">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+  </select> Select a Value if you can!!!
+  
+  <br>
+  <div>What value is selected: {{selectedOption}}</div>
+ 
+<br> 
+<br> 
+<br> 
+  
+  <form name="newform">
+	<input placeholder="Enter Anything" ng-model="requiredInput" required/>
+	<button ng-disabled="!newform.$valid">Click Me if you can!!!</button>
+  </form>
+  
+  
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
