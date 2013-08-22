@@ -258,6 +258,36 @@ events: {
 				</section>
 				<section>
 					<section>
+						<h3>$Scope</h3>
+							<ul>
+								<li>What gets exposed to the page</li>
+								<li>Bound within controller</li>
+								<li>Supports Watches and what AngularJS uses to know things have changed</li>
+							</ul>
+					</section>
+					<section>
+						<pre>
+							<code>
+controllers.controller('Controller1', function($scope) {
+  $scope.helloMessageOne = "Hello from Controller 1";
+  $scope.sayHi = function() {
+    alert('Hello there');
+  }
+  
+  $scope.object = {};
+  $scope.object.attribute = "Attribute";
+  
+  $scope.attribute = "Some Value";
+})	
+<!--HTML CODE-->
+{{helloMessageOne}}
+<button ng-click="sayHi()">Click me to say hello</button>
+							</code>
+						</pre>
+					</section>
+				</section>
+				<section>
+					<section>
 						<h3>Strongest Attributes</h3>
 						<ul>
 							<li>Two Way Data Binding</li>

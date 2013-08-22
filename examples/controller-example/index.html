@@ -31,6 +31,24 @@
   </div>
   
 
+<br>  
+<br>  
+<br>  
+  <input type="checkbox" ng-model="showInheritance"/> Click to show Inheritance
+  
+  <div ng-show="showInheritance">
+	  <div ng-controller="Controller1">
+		{{helloMessageOne}}
+	
+		  <br>
+		  <br>
+		  <div ng-controller="Controller1Child">
+			{{helloMessageOne}}
+		  </div>
+	</div>
+  </div>
+  
+
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
