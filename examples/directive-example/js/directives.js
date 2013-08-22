@@ -30,11 +30,9 @@ angular.module('myApp.directives', []).
 	return {
 		scope:{},
 		compile: function($element, $attrs, $transclude) {
-			$element.append('<div ng-click="sayHi()">Compile Directive</div>');
+			$element.append('<input ng-model="copyValue.copyMessage" />');
 			return function(scope, elm, attrs){
-				scope.sayHi = function() {
-					alert('Hello there friendly people');
-				}
+				
 			};
 		}
 	}
@@ -50,7 +48,24 @@ angular.module('myApp.directives', []).
 			};
 		}
 	}
-  }])
+  }]).
+  
+  directive('fromparent', [function() {
+  return {
+		scope: {local: '=fromparent'},
+		compile: function($element, $attrs, $transclude) {
+			$element.append('<div ng-repeat="repeat in local">{{repeat}}</div>');
+			return function(scope, elm, attrs){
+				
+				
+			};
+		}
+  }}])
+  
+  
+  
+  
+  
   
   
   

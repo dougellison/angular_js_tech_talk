@@ -5,7 +5,7 @@
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body ng-controller="Databinding" style="text-align:center">
+<body ng-controller="Directive" style="text-align:center">
 
 
   <div>Angular Directives Demo</div>
@@ -22,7 +22,15 @@
   
   <br>
   
-  <div copies ng-repeat="copy in copies" ng-init="copies = [1,2,3]"></div>
+  <div many ng-repeat="copy in copies"></div>
+  <br>
+  <br>
+  <br>
+  <div copies ng-repeat="copy in copies"></div>
+  
+  <br>
+  <button ng-click="addNew()">Add a new</button>
+  <div fromparent="parentValue"></div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
