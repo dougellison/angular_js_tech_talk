@@ -252,10 +252,11 @@ events: {
 							<li>Provide Encapsulation</li>
 							<li>Place to store business logic</li>
 							<li>Service References</li>
-							<li><a href="http://dougellison.github.io/examples/controller-example">Controller Example</a></li>
+							
 						</ul>	
 					</section>
 					<section>
+					<h3><a href="http://dougellison.github.io/examples/controller-example">Controller Example</a></h3>
 						<pre>
 							<code>
 var controllers = angular.module('myApp.controllers', []);
@@ -263,7 +264,7 @@ controllers.controller('Controller1', function($scope) {
   $scope.helloMessageOne = "Hello from Controller 1";
 })
 controllers.controller('Controller2', function($scope) {
-	$scope.helloMessageOne = "Hello from Controller 2";
+  $scope.helloMessageOne = "Hello from Controller 2";
 })
 <!-- HTML -->
 <div ng-controller="Controller1">
