@@ -255,6 +255,27 @@ events: {
 							<li><a href="http://dougellison.github.io/examples/controller-example">Controller Example</a></li>
 						</ul>	
 					</section>
+					<section>
+						<pre>
+							<code>
+var controllers = angular.module('myApp.controllers', []);
+controllers.controller('Controller1', function($scope) {
+  $scope.helloMessageOne = "Hello from Controller 1";
+})
+controllers.controller('Controller2', function($scope) {
+	$scope.helloMessageOne = "Hello from Controller 2";
+})
+<!-- HTML -->
+<div ng-controller="Controller1">
+  {{helloMessageOne}}
+</div>
+<div ng-controller="Controller2">
+  {{helloMessageOne}}
+</div>
+
+							</code>
+						</pre>
+					</section>
 				</section>
 				<section>
 					<section>
