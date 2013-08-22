@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body style="text-align:center">
+
+
+  <div>Angular Controller Demo</div>
+  
+  <br>
+  <br>
+  <br>
+  <div ng-controller="Controller1">
+	{{helloMessageOne}}
+	
+  <!--
+  <br>
+  <br>
+  <div ng-controller="Controller1Child">
+	{{helloMessageOne}}
+  </div> -->
+  </div>
+  <br>
+  <br>
+  <br>
+  <div ng-controller="Controller2">
+	{{helloMessageOne}}
+  </div>
+  
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>

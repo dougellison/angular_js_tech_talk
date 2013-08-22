@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-controller="Databinding" style="text-align:center">
+
+
+  <div>Angular Directives Demo</div>
+  <br>
+
+
+  <br>
+  <div directive1 >Hello there</div>
+  
+  <br>
+  <br>
+  <br>
+  <div compile style="cursor:pointer"></div>
+  
+  <br>
+  
+  <div copies ng-repeat="copy in copies" ng-init="copies = [1,2,3]"></div>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
