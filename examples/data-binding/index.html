@@ -48,6 +48,10 @@
 	<button ng-disabled="!newform.$valid">Click Me if you can!!!</button>
   </form>
   
+  <br>
+  <select>
+	<option ng-repeat="option in options" value="option">{{option}}</option>
+  </select>
   
 
   <!-- In production use:

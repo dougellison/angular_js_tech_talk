@@ -8,6 +8,8 @@ controllers.controller('Databinding', function($scope) {
 	
 	$scope.helloMessage = "Type and I will update";
 	
+	$scope.options = ['Option1', 'Option2'];
+	
 	
 });
 
