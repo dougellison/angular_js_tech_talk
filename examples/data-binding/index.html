@@ -45,7 +45,13 @@
   
   <form name="newform">
 	<input placeholder="Enter Anything" ng-model="requiredInput" required/>
+	<input placeholder="Enter Anything2" ng-model="requiredInput2" required/>
+	<input type="email" placeholder="Enter an e-mail" ng-model="emailAddress" required/>
 	<button ng-disabled="!newform.$valid">Click Me if you can!!!</button>
+	
+	<br>
+	<div >Is the form Valid: {{newform.$valid}}</div>
+	
   </form>
   
   <br>
